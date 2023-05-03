@@ -35,7 +35,7 @@ function ShowArea({ expences, onSelect }: Props) {
                   onSelect(item.id);
                 }}
               >
-                Danger
+                Remove
               </button>
             </td>
           </tr>

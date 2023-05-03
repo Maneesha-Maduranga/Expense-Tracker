@@ -10,10 +10,8 @@ function App() {
   const [select,setSelect] = useState('')
 
   const [expences, setExpences] = useState([
-    { id: 1, title: "Movie", price: 54, catergory: "Family" },
-    { id: 2, title: "JEllu", price: 54, catergory: "Family" },
-    { id: 3, title: "Movzie", price: 54, catergory: "Entertainment" },
-    { id: 4, title: "Movdwie", price: 54, catergory: "Entertainment" },
+    { id: 1, title: "Pay Electicity Bill", price: 2500, catergory: "Bills" },
+   
   ]);
 
   // Remove Expences
@@ -23,6 +21,16 @@ function App() {
   // Fillter Expences
   const fillterExpences = (title:string) => {
     setSelect(title)
+  }
+
+  interface Values{
+    title:string,
+    price:number,
+    catergory:string,
+  }
+
+  const addExpences = (data:Values) => {
+    setExpences([...expences,{id:expences.length+1,...data}])
   }
 
   const queary = select ? expences.filter(item => item.catergory === select) : expences
@@ -35,7 +43,7 @@ function App() {
       </header>
       <main className='container'>
         <Intro />
-        <ExpenseForm />
+        <ExpenseForm addExpences={(data) => addExpences(data)}/>
         <hr />
         <Selection onChange={(name) => {fillterExpences(name)}}/>
         <ShowArea expences={queary} onSelect={(id)=>{onDelete(id)}}/>
