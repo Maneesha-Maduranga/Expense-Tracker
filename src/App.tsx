@@ -2,6 +2,8 @@
 import ExpenseForm from "./components/ExpenseForm";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
+import Selection from "./components/Selection";
+import ShowArea from "./components/ShowArea";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <main className="container">
         <Intro />
         <ExpenseForm />
+        <hr />
+        <Selection />
+        <ShowArea />
       </main>
     </>
   );
