@@ -8,7 +8,7 @@ function ExpenseForm() {
         <input
           type='text'
           className='form-control'
-          id='exampleFormControlInput1'
+         
           placeholder='Expense Title'
         />
       </div>
@@ -19,21 +19,29 @@ function ExpenseForm() {
         <input
           type='number'
           className='form-control'
-          id='exampleFormControlInput1'
+          
           placeholder='Expense Price'
         />
       </div>
       <div className='mb-3'>
-      <label htmlFor='exampleFormControlInput1' className='form-label'>
+        <label htmlFor='exampleFormControlInput1' className='form-label'>
           Category
         </label>
-        <select className='form-select' aria-label='Default select example'>
-          <option selected>Open this select menu</option>
+        <select
+          className='form-select'
+          aria-label='Default select example'
+          defaultValue='Family'
+        >
           <option value='Family'>Family</option>
           <option value='Entertainment'>Entertainement</option>
           <option value='Utils'>Utils</option>
           <option value='Utils'>Bills</option>
         </select>
+      </div>
+      <div className='mb-3 d-grid'>
+        <button type='button' className='btn btn-outline-success'>
+          ADD
+        </button>
       </div>
     </form>
   );
