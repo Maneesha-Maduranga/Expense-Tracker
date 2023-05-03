@@ -1,6 +1,24 @@
+import { useState,FormEvent} from "react";
+
+
+
+
 function ExpenseForm() {
+
+
+
+  const handleSubmit = (e:FormEvent) => {
+    e.preventDefault()
+
+
+  }
+
+
+
+ 
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className='mb-3'>
         <label htmlFor='exampleFormControlInput1' className='form-label'>
           Title
